@@ -1,0 +1,179 @@
+*{
+	margin: 0px;
+	padding: 0px;	
+	font-family: "Helvetica", sans-serif;
+}/*reset css pour que la footer et ma nav prenne bien tout l'écran et qu'il n'y ait pas d'espaces avec les bords de l'écran*/
+
+#background-video {
+	height: 100vh;
+	width: 100vw;
+	object-fit: cover; /*pour que ça prenne bien toute la largeur ou hauteur de l'écran.*/
+	position: fixed; /*le fond reste le même et descend sur la page*/
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1; /*pour que ce soit à l'arrière plan et pas par dessus le contenu de ma page*/
+}
+
+body {
+	display: grid;
+	grid-template-columns: 1fr 2.6fr 1fr; /*colonne centrale plus grande, les côtés sont décoratifs*/
+	row-gap: 0; /*pour éviter les espaces entre les textes dont je voulais pas*/
+	column-gap: 3em; /*pour que les colonnes ne soient pas collés*/
+}
+
+nav{
+	width: 100%;
+	margin: 0 auto;
+	background: #1d0f21;
+	position: fixed;
+}
+
+nav ul{
+	list-style-type: none;
+	display: flex;
+}
+
+nav li{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding-top: 8px;
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+
+nav a{
+	display: block;
+	text-decoration: none;
+	color: #969eea;
+}
+
+header {
+	grid-column: 1/3;
+	grid-row: 1;
+	text-align: center;
+	margin-top: 10em;
+	margin-left: 20%;
+	margin-right: 40%;
+}
+
+h1 {
+	color: #969eea;
+	background: rgba(0, 0, 0, 0.25);
+	text-align: center;
+	font-size: 2.5em;
+	font-family: "Helvetica", sans-serif;
+	font-weight: lighter;
+	padding-top: 0.5em; 
+	padding-bottom: 0.5em; /*padding est pour que le fond ait de l'espace entre le texte et le bord*/
+	border-radius: 5em 0em 5em 0em; /*défini la courbe de chaque coin*/
+	border: 0.2em groove #1d0f21; /*pour rendre le contour plus élégant*/
+	border-width: 0.3em 0.2em; /*taille du contour horizontalement et verticalement*/
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+#photo-cv {
+	background-color: #382A3D;
+	border-radius: 50%;
+	width: 120px;
+	height: auto; /*évite les déformations*/
+	padding: 1%;
+}
+
+
+section {
+	grid-column: 2; 
+	margin: 0;
+	margin-top: 20px; /*je ne veux une marge qu'au dessus dans le cas des sections*/
+	background: linear-gradient(
+		rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.25),
+		rgba(0, 0, 0, 0.25), /*besoin de le doubler pour qu'il y ait une zone ou l'espèce d'ombrage que ça fait est bien à 0.25 d'opacité. */
+		rgba(0, 0, 0, 0));
+	padding-bottom: 20px;
+}
+
+h2 {
+	color: #969eea;
+	text-align: center;
+	font-size: 2.2em;
+	font-family: "Helvetica", sans-serif;
+	font-weight: lighter;
+	background: rgba(0, 0, 0, 0.25);
+	padding-top: 0.2em;
+	padding-bottom: 0.2em; /*padding est pour que le fond ait de l'espace entre le texte et le bord*/
+	border-radius: 4em 0em 4em 0em; 
+	margin: 8em;
+	margin-top: 20px;
+	margin-bottom: 12px;
+}
+
+h3 {
+	color: #969eea;
+	text-align: left;
+	font-size: 1.7em;
+	font-weight: bold;
+	font-family: "Helvetica", sans-serif;
+	margin-top: 10px;
+	margin-bottom: 12px;
+}
+
+p, li {
+	color: #828bd6;
+	font-family: "Helvetica", sans-serif;
+	text-align: justify;
+	font-size: 1.6em;
+	margin: 0;
+	margin-left: 3em; /*juste pour décaler un peu par rapport aux titres, je trouve ça plus jolie*/
+	margin-right: 3em;
+}
+
+.gras {
+	font-weight: bold;
+} /*ma classe qui mets les mots en gras.*/
+
+.italic {
+	font-style: italic;
+}
+
+a {
+	color: #bec4f7;
+}
+
+a:hover {
+	background: rgba(255, 200, 250,0.25);
+} /*change la couleur de fond lorque la souris passe dessus*/
+
+
+
+footer {
+	grid-column: 1/4; /*pour que ça prenne tout le bas de la page.*/
+	background: #1d0f21;
+	padding: 4em; /*pour que le footer prenne plus de place verticalement, comme sur la plupart des sites*/
+	margin-top: 5em;
+	display: grid; /*j'ai dû définir un grid  l'intérieur du footer pour mettre en place mes éléments <p> et <span> comme je voulais*/
+	grid-template-columns: 3fr 1fr; /*je voulais que <span> prenne moins de place que <p>*/
+	column-gap: 3em;
+}
+
+footer>p {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+
+
+footer>span>p {
+	text-align: center;
+}
+
+.mention {
+	text-align: center; /*nécessaire pour que le texte ne s'aligne pas à gauche.*/
+	list-style-type: none; /*je ne veux pas de points devant mes éléments de liste*/
+}
+
